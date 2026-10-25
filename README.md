@@ -31,6 +31,8 @@ pnpm dev
 
 Al terminar el paso 0 debes ver, debajo del formulario, una caja "Cola de pedidos" con el texto "Aún no hay pedidos en la cola." y "0 por sonar".
 
+En el código, los comentarios de hoy dicen `Clase, Ticket N`. Los que dicen `L3, ...` son de la semana pasada y solo explican lo que ya está hecho.
+
 ## Ticket 1 · Agregar un pedido
 
 **Dónde:** `PedidoCancion.jsx` y `App.jsx`
@@ -66,7 +68,7 @@ Al terminar el paso 0 debes ver, debajo del formulario, una caja "Cola de pedido
 No suma ni resta al ticket. Elige uno o los dos.
 
 - **Los nuevos arriba:** que el pedido más reciente salga primero en la cola. Es un cambio de orden en una sola línea de `agregar`.
-- **Limpiar los que ya sonaron:** agrega en `ListaPedidos.jsx` un botón con la clase `boton-limpiar` que llame a una función `limpiar` de `App.jsx`. `limpiar` deja en el estado solo los pedidos que todavía no sonaron.
+- **Limpiar los que ya sonaron:** escribe en `App.jsx` una función `limpiar` que deje en el estado solo los pedidos que todavía no sonaron. Pásala a `ListaPedidos` en una prop nueva `onLimpiar` (igual que `onBorrar`) y agrega en `ListaPedidos.jsx` un botón con la clase `boton-limpiar` que la llame.
 
 ## Reglas del hangar
 

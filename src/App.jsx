@@ -9,10 +9,10 @@ import Seccion from "./components/Seccion.jsx";
 import { canciones } from "./data/canciones.js";
 
 function App() {
-    // Clase, Bonus: lo que el usuario escribe vive en un estado y el input lo muestra (input controlado)
+    // L3, Bonus: lo que el usuario escribe vive en un estado y el input lo muestra (input controlado)
     const [busqueda, setBusqueda] = useState("");
 
-    // Clase, Bonus: .toLowerCase() a los dos lados para que "SEÑAL" y "señal" cuenten igual.
+    // L3, Bonus: .toLowerCase() a los dos lados para que "SEÑAL" y "señal" cuenten igual.
     // visibles es un array nuevo; el array canciones no se toca, así que al borrar el texto vuelven todas.
     const visibles = canciones.filter((cancion) =>
         cancion.titulo.toLowerCase().includes(busqueda.toLowerCase())
@@ -52,7 +52,7 @@ function App() {
             {canciones.length > 0 ? (
                 // Todo lo que va adentro le llega a Seccion como children
                 <Seccion titulo="Turno de noche">
-                    {/* Clase, Bonus */}
+                    {/* L3, Bonus */}
                     <input
                         className="buscador"
                         type="text"
@@ -61,7 +61,7 @@ function App() {
                         onChange={(e) => setBusqueda(e.target.value)}
                     />
                     <section className="playlist">
-                        {/* Clase, Bonus: el .map() recorre visibles, no canciones */}
+                        {/* L3, Bonus: el .map() recorre visibles, no canciones */}
                         {visibles.map((cancion) => (
                             <TarjetaCancion
                                 // La key es para React, no para la tarjeta. El id es único.
@@ -83,14 +83,14 @@ function App() {
                 <p className="playlist-vacia">Aún no hay canciones en la estación</p>
             )}
 
-            {/* Home Challenge, Ticket 1: el formulario va debajo de la playlist, antes del reproductor */}
+            {/* L3, Home Challenge: el formulario va debajo de la playlist, antes del reproductor */}
             {/* Clase, Ticket 1: el formulario recibe agregar en la prop onAgregar */}
             <PedidoCancion onAgregar={agregar} />
 
             {/* Clase: la cola recibe los datos y las funciones por props */}
             <ListaPedidos pedidos={pedidos} onMarcar={marcar} onBorrar={borrar} />
 
-            {/* Clase, Ticket 1: el reproductor reemplaza a Controles */}
+            {/* L3, Ticket 1: el reproductor reemplaza a Controles */}
             <Reproductor />
             <PiePagina />
         </main>
